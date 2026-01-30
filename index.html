@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Tabassum Zaidi – Skill-Based Growth for Women</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Join 10K+ women learning phone-based digital skills with Tabassum Zaidi. No experience needed. Start your flexible journey today.">
+  <meta property="og:image" content="https://i.ibb.co/xq5JXKMw/nida-pic.jpg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','829049690168540');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=829049690168540&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    :root{
+      --primary-pink: #FF5E8E;
+      --coral: #FF6B6B;
+      --amber: #FFC107;
+      --lavender: #6A67CE;
+      --midnight: #1A1A2E;
+      --cream:#FFF9F9;
+      --creamy-peach: #FFF3E0;
+      --pure-white: #FFFFFF;
+      --charcoal: #212121;
+      --success:#00C9B7;
+      --warm-shadow:0 6px 20px rgba(233,30,99,.12);
+      --warm-shadow-hover:0 10px 30px rgba(233,30,99,.18);
+      --warm-glow:0 0 25px rgba(255,107,107,.4);
+      --warm-glow-intense:0 0 40px rgba(255,107,107,.6);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:var(--creamy-peach);
+      color:var(--charcoal);
+      font-family:'Inter',sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    @keyframes pulseGlowWarm {
+      0%,100%{box-shadow:0 0 20px rgba(255,107,107,.4);}
+      50%{box-shadow:0 0 40px rgba(255,107,107,.8);}
+    }
+    .glow-pulse{
+      animation:pulseGlowWarm 2.5s infinite;
+      position:relative;
+      z-index:1;
+    }
+    @keyframes shimmer{
+      0%{background-position:-200% 0;}
+      100%{background-position:200% 0;}
+    }
+    .shine-effect{
+      position:relative;
+      overflow:hidden;
+    }
+    .shine-effect::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+      background-size:200% 100%;
+      animation:shimmer 3s infinite linear;
+      z-index:0;
+      transform:rotate(30deg);
+      opacity:0;
+      transition:opacity .3s ease;
+    }
+    .shine-effect:hover::before{opacity:1;}
+    .glow-border{
+      border:2px solid transparent;
+      background:linear-gradient(var(--pure-white),var(--pure-white)) padding-box,
+                 linear-gradient(135deg,var(--primary-pink),var(--amber)) border-box;
+      transition:all .4s ease;
+    }
+    .glow-border:hover{
+      box-shadow:0 0 25px rgba(233,30,99,.4);
+      transform:translateY(-3px);
+    }
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .animate-fade-in{animation:fadeInUp .6s ease-out forwards;opacity:0;}
+    .animate-stagger{animation:fadeInUp .6s ease-out forwards;animation-delay:calc(var(--order) * .1s);opacity:0;}
+    @keyframes white-glitch{
+      0%,100%{transform:translateX(0) skew(0deg);opacity:1;}
+      10%{transform:translateX(-2px) skew(-1deg);opacity:.9;}
+      20%{transform:translateX(2px) skew(1deg);opacity:1;}
+      30%{transform:translateX(-1px) skew(0deg);opacity:.95;}
+      40%{transform:translateX(1px) skew(-.5deg);opacity:1;}
+      50%{transform:translateX(-3px) skew(.5deg);opacity:.9;}
+      60%{transform:translateX(3px) skew(-1deg);opacity:1;}
+    }
+    .wa-btn.glitch-effect:hover{animation:white-glitch .4s ease-in-out;}
+    section{padding:50px 0;position:relative;}
+    .hero-section{
+      background:linear-gradient(135deg,var(--pure-white),var(--creamy-peach));
+      padding:70px 0 50px;
+      overflow:hidden;
+    }
+    .badge-custom{
+      background:linear-gradient(135deg,var(--primary-pink),var(--amber));
+      color:var(--pure-white);
+      padding:.6rem 1.5rem;
+      border-radius:50px;
+      font-weight:600;
+      font-size:.875rem;
+      display:inline-block;
+      margin-bottom:1rem;
+      box-shadow:var(--warm-shadow);
+      position:relative;
+      overflow:hidden;
+      border:none;
+    }
+    .gradient-text{
+      background:linear-gradient(135deg,var(--charcoal),var(--primary-pink));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      font-weight:800;
+      font-family:'Playfair Display',serif;
+    }
+    .hero-text-compact{
+      max-width:600px;
+      margin:0 auto 1.5rem;
+      font-size:1.125rem;
+      line-height:1.4;
+    }
+    .wa-btn{
+      background:linear-gradient(135deg,var(--coral),var(--primary-pink));
+      color:var(--pure-white);
+      padding:.85rem 1.8rem;
+      border-radius:50px;
+      font-weight:700;
+      border:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      box-shadow:0 8px 20px rgba(233,30,99,.3);
+      cursor:pointer;
+      transition:all .3s ease;
+      text-decoration:none;
+      font-size:1rem;
+      white-space:nowrap;
+      position:relative;
+      overflow:hidden;
+    }
+    .wa-btn:hover{
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:var(--warm-glow-intense),0 15px 30px rgba(233,30,99,.4);
+    }
+    .wa-btn:active{transform:translateY(0) scale(.98);}
+    .wa-btn>*{position:relative;z-index:1;}
+    .about-img{
+      width:100%;
+      height:auto;
+      max-height:500px;
+      border-radius:15px;
+      object-fit:cover;
+      box-shadow:var(--warm-shadow-hover);
+      border:6px solid var(--pure-white);
+    }
+    .about-content {padding-left: 0.5rem;}
+    .stat-card{
+      background:var(--pure-white);
+      padding:1.25rem;
+      border-radius:12px;
+      box-shadow:var(--warm-shadow);
+      text-align:center;
+      transition:all .3s ease;
+      height:100%;
+    }
+    .stat-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--warm-shadow-hover);
+    }
+    .counter{
+      font-size:2rem;
+      font-weight:800;
+      color:var(--primary-pink);
+    }
+    .feedback-viewport{
+      overflow:hidden;
+      margin:1.5rem 0;
+      mask:linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%);
+      -webkit-mask:linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%);
+    }
+    .feedback-track{
+      display:flex;
+      gap:15px;
+      width:max-content;
+      animation:scrollLeft 40s linear infinite;
+    }
+    .feedback-track:hover{animation-play-state:paused;}
+    @keyframes scrollLeft{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
+    .feedback-item{
+      flex-shrink:0;
+      width:260px;
+      height:340px;
+      border-radius:15px;
+      overflow:hidden;
+      transition:transform .4s ease;
+      position:relative;
+      box-shadow:var(--warm-shadow);
+      background:#000;
+    }
+    .feedback-item:hover{
+      transform:scale(1.03);
+      box-shadow:var(--warm-shadow-hover);
+    }
+    .feedback-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .step-card{
+      background:var(--pure-white);
+      border-radius:15px;
+      padding:1.5rem;
+      box-shadow:var(--warm-shadow);
+      transition:all .4s ease;
+      height:100%;
+    }
+    .step-card:hover{
+      transform:translateY(-8px);
+      box-shadow:var(--warm-shadow-hover);
+    }
+    .step-number{
+      width:50px;height:50px;
+      background:linear-gradient(135deg,var(--primary-pink),var(--coral));
+      color:var(--pure-white);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:1.3rem;
+      flex-shrink:0;
+    }
+    .accordion-item{
+      border:none;
+      border-radius:10px !important;
+      margin-bottom:.75rem;
+      box-shadow:var(--warm-shadow);
+    }
+    .accordion-button{
+      background:var(--pure-white);
+      font-weight:600;
+      padding:1rem;
+    }
+    .accordion-button:not(.collapsed){
+      background:linear-gradient(135deg,var(--creamy-peach),var(--pure-white));
+      color:var(--charcoal);
+    }
+    .form-backdrop{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(8px);
+      z-index:9999;
+      opacity:0;visibility:hidden;
+      transition:all .4s ease;
+    }
+    .form-backdrop.show{opacity:1;visibility:visible;}
+    #formContainer{
+      position:fixed;top:50%;left:50%;
+      transform:translate(-50%,-50%) scale(.9);
+      z-index:10000;
+      max-width:500px;width:90%;
+      max-height:85vh;
+      opacity:0;visibility:hidden;
+      transition:all .4s ease;
+    }
+    #formContainer.show{
+      opacity:1;visibility:visible;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    .form-card{
+      box-shadow:0 0 40px rgba(233,30,99,.3);
+      border:2px solid rgba(233,30,99,.2);
+    }
+    .form-control,.form-select{
+      border:2px solid #E5E5E5;
+      border-radius:8px;
+      padding:.6rem .9rem;
+      transition:all .3s ease;
+    }
+    .form-control:focus,.form-select:focus{
+      border-color:var(--primary-pink);
+      box-shadow:0 0 0 4px rgba(233,30,99,.15);
+    }
+    .pp-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(26,26,46,.85);
+      backdrop-filter:blur(4px);
+      z-index:10001;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .3s ease;
+    }
+    .pp-overlay.show{
+      opacity:1;
+      visibility:visible;
+    }
+    .pp-modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) scale(.95);
+      width:90%;
+      max-width:560px;
+      max-height:86vh;
+      background:var(--pure-white);
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(233,30,99,.25);
+      display:flex;
+      flex-direction:column;
+      opacity:0;
+      visibility:hidden;
+      transition:all .3s ease;
+      z-index:10002;
+    }
+    .pp-overlay.show .pp-modal{
+      opacity:1;
+      visibility:visible;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    .pp-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.25rem 1.5rem;
+      border-bottom:1px solid var(--creamy-peach);
+      flex-shrink:0;
+    }
+    .pp-title{
+      font-size:1.25rem;
+      font-weight:700;
+      color:var(--primary-pink);
+    }
+    .pp-close{
+      background:none;
+      border:none;
+      font-size:1.5rem;
+      color:var(--coral);
+      cursor:pointer;
+      transition:color .2s;
+    }
+    .pp-close:hover{
+      color:var(--primary-pink);
+    }
+    .pp-body{
+      padding:1.5rem;
+      overflow-y:auto;
+      font-size:.95rem;
+      line-height:1.6;
+      color:var(--charcoal);
+    }
+    .pp-body h3{
+      font-size:1rem;
+      font-weight:600;
+      margin:1rem 0 .5rem;
+      color:var(--primary-pink);
+    }
+    .pp-body h3:first-child{
+      margin-top:0;
+    }
+    .pp-body p{
+      margin-bottom:.75rem;
+    }
+    .pp-footer{
+      margin-top:1rem;
+      font-size:.85rem;
+      font-weight:600;
+      text-align:center;
+      color:var(--primary-pink);
+      border-top:1px solid var(--creamy-peach);
+      padding-top:1rem;
+    }
+    .insta-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary-pink);
+      text-decoration:none;
+      font-weight:600;
+      transition:all .3s ease;
+      margin-top:10px;
+    }
+    .insta-link:hover{
+      transform:scale(1.05);
+      color:var(--coral);
+    }
+    @media(max-width:768px){
+      section{padding:40px 0;}
+      .hero-section{padding:50px 0 30px;}
+      .about-img{max-height:400px;}
+      .feedback-item{width:220px;height:280px;}
+      .counter{font-size:1.6rem;}
+      .wa-btn{width:100%;justify-content:center;}
+      h1{font-size:2rem !important;}
+      h2{font-size:1.5rem !important;}
+      .pp-modal{width:92%;border-radius:12px;}
+      .pp-header{padding:1rem;}
+      .pp-body{padding:1rem;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+      .feedback-track{animation:none !important;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-backdrop" id="formBackdrop"></div>
+
+<div class="pp-overlay" id="ppOverlay">
+  <div class="pp-modal">
+    <div class="pp-header">
+      <div class="pp-title">Privacy Policy</div>
+      <button class="pp-close" id="ppClose">&times;</button>
+    </div>
+    <div class="pp-body">
+      <h3>Information We Collect</h3>
+      <p>We collect information you provide directly to us, such as your name, phone number, age, and profession when you contact us through WhatsApp or other channels.</p>
+      <h3>How We Use Your Information</h3>
+      <p>Your information is used solely to communicate with you about our training programs, provide customer support, and send updates about courses you've expressed interest in.</p>
+      <h3>Data Protection</h3>
+      <p>We implement appropriate security measures to protect your personal information. Your data is never sold or shared with third parties for marketing purposes.</p>
+      <h3>Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal information at any time. Contact us to exercise these rights or for any privacy-related concerns.</p>
+      <div class="pp-footer">By using our services, you agree to this privacy policy. Last updated: January 2025</div>
+    </div>
+  </div>
+</div>
+
+<section class="hero-section text-center">
+  <div class="container position-relative">
+    <div class="badge-custom animate-stagger glow-pulse mb-3" style="--order:1;">🚺 Women Only Community</div>
+    <h1 class="display-3 fw-bold gradient-text mb-2 animate-stagger" style="--order:2;">
+      Join <span class="counter" data-target="10000" data-suffix="+">0</span> Women
+    </h1>
+    <p class="hero-text-compact text-muted animate-stagger" style="--order:3;">
+      Rising Together • From Homemaker to Skill-Based Growth
+    </p>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6 animate-stagger" style="--order:1;">
+        <img src="https://i.ibb.co/xq5JXKMw/nida-pic.jpg" alt="Tabassum Zaidi - Mentor" class="about-img" loading="lazy">
+      </div>
+      <div class="col-lg-6 animate-stagger about-content" style="--order:2;">
+        <div class="badge-custom mb-2 glow-pulse">💫 Your Coach</div>
+        <h2 class="display-5 fw-bold mb-3">Hi, I'm Tabassum Zaidi</h2>
+        <div class="mb-4">
+          <p class="fs-5 mb-2">🏡 Ek homemaker se skill mentor tak ka safar</p>
+          <p class="fs-5 mb-2">💻 Freelancer & Digital Skills Expert</p>
+          <p class="fs-5 mb-2">🎯 My Vision: "Empowering Females to Empower"</p>
+          <p class="fs-5">Ab aur bhi strong ban ke saath me growth karna chahti hoon - ready ho toh WhatsApp karein 👇</p>
+        </div>
+        <button class="wa-btn mb-4 open-any shine-effect glitch-effect" data-source="About Section">
+          <i data-lucide="message-circle" width="20"></i>
+          Connect on WhatsApp
+        </button>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="stat-card shine-effect">
+              <div class="counter" data-target="5" data-suffix="+">0</div>
+              <div class="text-muted small">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-card shine-effect">
+              <div class="counter" data-target="300" data-suffix="+">0</div>
+              <div class="text-muted small">Students Helped</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-card shine-effect">
+              <div class="counter" data-target="100000" data-prefix="₹">0</div>
+              <div class="text-muted small">Monthly Growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: linear-gradient(135deg, var(--creamy-peach), var(--pure-white));">
+  <div class="container">
+    <h2 class="text-center display-5 fw-bold mb-3 animate-stagger" style="--order:1;">✨ Real Success Stories</h2>
+    <p class="text-center text-muted mb-4 animate-stagger" style="--order:2;">See authentic feedback from our thriving community</p>
+    <div class="feedback-viewport animate-stagger" style="--order:3;">
+      <div class="feedback-track">
+        <div class="feedback-item"><img src="https://i.ibb.co/chfGq0dg/tabbu-1.jpg" alt="Student Success 1" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/DPwhG5n2/Tabbu-2.jpg" alt="Student Success 2" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/ycy9gZDb/Tabbu-3.jpg" alt="Student Success 3" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/chfGq0dg/tabbu-1.jpg" alt="Student Success 4" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/DPwhG5n2/Tabbu-2.jpg" alt="Student Success 5" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/ycy9gZDb/Tabbu-3.jpg" alt="Student Success 6" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/chfGq0dg/tabbu-1.jpg" alt="Student Success 7" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/DPwhG5n2/Tabbu-2.jpg" alt="Student Success 8" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/ycy9gZDb/Tabbu-3.jpg" alt="Student Success 9" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/chfGq0dg/tabbu-1.jpg" alt="Student Success 10" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/DPwhG5n2/Tabbu-2.jpg" alt="Student Success 11" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/ycy9gZDb/Tabbu-3.jpg" alt="Student Success 12" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="wa-btn open-any shine-effect glitch-effect" data-source="Feedback Section">
+        <i data-lucide="message-circle" width="20"></i>
+        Join Our Success Stories
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center display-5 fw-bold mb-4">What Happens When You Join?</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card shine-effect">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-number">1</div>
+            <div>
+              <h3 class="h5 fw-bold mb-2">Instant Connection</h3>
+              <p class="text-muted mb-0 small">Direct WhatsApp access to Tabassum for personal guidance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card shine-effect">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-number">2</div>
+            <div>
+              <h3 class="h5 fw-bold mb-2">Complete Access</h3>
+              <p class="text-muted mb-0 small">Step-by-step training system to grow fast</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card shine-effect">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-number">3</div>
+            <div>
+              <h3 class="h5 fw-bold mb-2">Daily Mentorship</h3>
+              <p class="text-muted mb-0 small">24/7 support & community access</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card shine-effect">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-number">4</div>
+            <div>
+              <h3 class="h5 fw-bold mb-2">Start Confidently</h3>
+              <p class="text-muted mb-0 small">Begin from Week 1 with clarity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <button class="wa-btn open-any shine-effect glitch-effect" data-source="Steps">
+        <i data-lucide="message-circle" width="20"></i>
+        Get Started Now
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: linear-gradient(135deg, var(--creamy-peach), var(--pure-white));">
+  <div class="container">
+    <h2 class="text-center display-5 fw-bold mb-4">Frequently Asked Questions</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item glow-border">
+            <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">What kind of work will I be doing?</button></h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Digital skills: social media, content creation, digital marketing. 100% legitimate.</div></div>
+          </div>
+          <div class="accordion-item glow-border">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">When can I expect results?</button></h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Most students see first rewards within 4 weeks; steady growth in 2–3 months with consistent effort.</div></div>
+          </div>
+          <div class="accordion-item glow-border">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">Do I need any prior experience?</button></h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">No experience needed! Step-by-step guidance from zero to confident.</div></div>
+          </div>
+          <div class="accordion-item glow-border">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">What support will I get?</button></h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Daily mentorship, 24/7 WhatsApp, weekly calls & community.</div></div>
+          </div>
+          <div class="accordion-item glow-border">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">Is there any investment?</button></h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">A single nominal training fee – no hidden costs ever.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--midnight), var(--primary-pink));">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold mb-3">Ready to Transform Your Life?</h2>
+    <p class="fs-5 mb-4">Join thousands of women on their journey to skill-based independence</p>
+    <div class="card border-0 p-4 p-md-5 mb-4" style="background: var(--pure-white); color: var(--charcoal);">
+      <h3 class="h4 fw-bold mb-3">📲 How to Get Started?</h3>
+      <p class="fs-5 mb-3">Bas apni journey start karne ke liye ye details taiyaar rakhiye:</p>
+      <div class="row g-2 mb-3">
+        <div class="col-md-4"><div class="glow-border text-dark p-3 rounded" style="background: var(--creamy-peach);"><strong>📋 Name:</strong> Full Name</div></div>
+        <div class="col-md-4"><div class="glow-border text-dark p-3 rounded" style="background: var(--creamy-peach);"><strong>🎂 Age:</strong> Your Age</div></div>
+        <div class="col-md-4"><div class="glow-border text-dark p-3 rounded" style="background: var(--creamy-peach);"><strong>💼 Profession:</strong> Current Status</div></div>
+      </div>
+      <button class="wa-btn open-any glow-pulse glitch-effect" data-source="Final CTA" style="background: white; color: var(--coral);">
+        <i data-lucide="message-circle" width="22"></i>
+        Message on WhatsApp Now
+      </button>
+    </div>
+    <div class="card border-0 p-3 mb-3 glow-border" style="background: rgba(255,255,255,.15);">
+      <h4 class="h5 fw-bold mb-2">⏳ Within 24 hours:</h4>
+      <p class="mb-0">✅ Clear Roadmap</p>
+    </div>
+    <p class="fs-6 mb-2">✨ Empower her with skills • 🌈 Support her with vision • 🚀 Dreams to direction</p>
+    <p class="fs-4 fw-bold mb-1">❤️ <strong>With Strength & Sincerity, Tabassum Zaidi</strong></p>
+    <div class="mt-3">
+      <button class="btn btn-outline-light btn-sm" id="privacyBtn" style="font-size: 0.8rem; border-color: rgba(255,255,255,0.5);">
+        <i data-lucide="shield-check" width="14" style="margin-right: 4px;"></i> Privacy Policy
+      </button>
+    </div>
+  </div>
+</section>
+
+<div id="formContainer">
+  <div class="card form-card glow-pulse">
+    <div class="card-body p-4 position-relative">
+      <button id="closeFormBtn" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+      <div class="text-center mb-4">
+        <h2 class="h4 fw-bold mb-1" style="color:var(--primary-pink);">🚀 Start Your Journey</h2>
+        <p class="text-muted small">Fill details to get started</p>
+      </div>
+      <form id="mainForm" novalidate>
+        <input type="hidden" id="sourceInfo" name="sourceInfo">
+        <div class="row g-2">
+          <div class="col-12">
+            <label class="form-label d-flex align-items-center gap-2"><i data-lucide="user" style="width:16px;"></i> Full Name *</label>
+            <input id="inp_name" type="text" class="form-control" required placeholder="Your full name">
+          </div>
+          <div class="col-12">
+            <label class="form-label d-flex align-items-center gap-2"><i data-lucide="phone" style="width:16px;"></i> Phone *</label>
+            <input id="inp_phone" type="tel" class="form-control" required placeholder="10-digit number" maxlength="10">
+          </div>
+          <div class="col-6">
+            <label class="form-label d-flex align-items-center gap-2"><i data-lucide="calendar" style="width:16px;"></i> Age *</label>
+            <input id="inp_age" type="number" class="form-control" required placeholder="Age" min="15" max="65">
+          </div>
+          <div class="col-6">
+            <label class="form-label d-flex align-items-center gap-2"><i data-lucide="users" style="width:16px;"></i> Gender *</label>
+            <select id="inp_gender" class="form-select" required>
+              <option value="">Select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label d-flex align-items-center gap-2"><i data-lucide="briefcase" style="width:16px;"></i> Profession *</label>
+            <select id="inp_profession" class="form-select" required>
+              <option value="">Select Profession</option>
+              <option>Student</option>
+              <option>Homemaker</option>
+              <option>Working Professional</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="wa-btn w-100 glitch-effect">📲 Send to WhatsApp</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+lucide.createIcons();
+
+const counters=document.querySelectorAll('.counter');
+const counterObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting&&!entry.target.classList.contains('counted')){
+      entry.target.classList.add('counted');
+      const target=+entry.target.getAttribute('data-target');
+      const prefix=entry.target.getAttribute('data-prefix')||'';
+      const suffix=entry.target.getAttribute('data-suffix')||'';
+      let current=0;
+      const inc=Math.max(1,Math.floor(target/50));
+      const timer=setInterval(()=>{
+        current+=inc;
+        if(current>=target){current=target;clearInterval(timer);}
+        entry.target.textContent=prefix+current.toLocaleString()+suffix;
+      },30);
+    }
+  });
+},{threshold:0.3});
+counters.forEach(counter=>counterObserver.observe(counter));
+
+const formBackdrop=document.getElementById('formBackdrop');
+const formContainer=document.getElementById('formContainer');
+const mainForm=document.getElementById('mainForm');
+const sourceInfo=document.getElementById('sourceInfo');
+const closeFormBtn=document.getElementById('closeFormBtn');
+const ppOverlay=document.getElementById('ppOverlay');
+const ppClose=document.getElementById('ppClose');
+const privacyBtn=document.getElementById('privacyBtn');
+
+// ✅ UPDATED GOOGLE SCRIPT URL
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyNsyx76sLGBy09qj-B-7bZz6pnK2GdnHr63PpvwBvTKPcbEFvFfxvpmuJg74plR6ZA/exec";
+// Tabassum's WhatsApp Number
+const WA_NUMBER_INT="917976381050";
+
+function openForm(source='site'){
+  sourceInfo.value=source;
+  formBackdrop.classList.add('show');
+  formContainer.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function closeForm(){
+  formBackdrop.classList.remove('show');
+  formContainer.classList.remove('show');
+  document.body.style.overflow='';
+  setTimeout(()=>mainForm.reset(),300);
+}
+
+function openPrivacy(){
+  ppOverlay.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function closePrivacy(){
+  ppOverlay.classList.remove('show');
+  document.body.style.overflow='';
+}
+
+formBackdrop.addEventListener('click',closeForm);
+closeFormBtn.addEventListener('click',closeForm);
+privacyBtn.addEventListener('click',openPrivacy);
+ppClose.addEventListener('click',closePrivacy);
+ppOverlay.addEventListener('click',function(e){if(e.target===ppOverlay)closePrivacy();});
+
+document.addEventListener('click',e=>{
+  const trigger=e.target.closest('.open-any');
+  if(trigger&&!trigger.closest('#formContainer')){
+    e.preventDefault();
+    openForm(trigger.getAttribute('data-source')||'Website');
+  }
+});
+
+mainForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('inp_name').value.trim();
+  const phone=document.getElementById('inp_phone').value.replace(/\D/g,'');
+  const age=document.getElementById('inp_age').value;
+  const gender=document.getElementById('inp_gender').value;
+  const profession=document.getElementById('inp_profession').value;
+
+  if(!name||phone.length<6||!age||!gender||!profession){
+    alert('Please fill all fields correctly.');
+    return;
+  }
+
+  const formData=new FormData();
+  formData.append('name',name);
+  formData.append('phone',phone);
+  formData.append('age',age);
+  formData.append('gender',gender);
+  formData.append('profession',profession);
+  formData.append('source',sourceInfo.value||'Website');
+  formData.append('timestamp',new Date().toISOString());
+
+  fetch(SCRIPT_URL,{
+    method:'POST',
+    body:formData,
+    mode:'no-cors'
+  }).catch(err=>console.error('Sheet error:',err));
+
+  const message=encodeURIComponent(
+    `Hello Ma'am,\n\nI am interested in your program. Here are my details:\n\nName: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nProfession: ${profession}\n\nPlease share next steps. Thank you!`
+  );
+
+  if(typeof fbq!=='undefined'){
+    fbq('track','Contact');
+    fbq('track','Lead',{
+      content_name:'WhatsApp Form Submission',
+      content_category:'Lead Generation',
+      content_source:sourceInfo.value
+    });
+  }
+
+  window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`,'_blank');
+  closeForm();
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeForm();
+    closePrivacy();
+  }
+});
+</script>
+</body>
+</html>
