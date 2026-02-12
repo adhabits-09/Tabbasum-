@@ -19,7 +19,7 @@
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-  <!-- Meta Pixel -->
+  <!-- Meta Pixel - Fixed: Disabled autoConfig to prevent duplicate SubscribedButtonClick -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -29,6 +29,9 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window,document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
+  
+  // Disable automatic button tracking to prevent duplicate SubscribedButtonClick events
+  fbq('set', 'autoConfig', false, '767347249605407');
   fbq('init','767347249605407');
   fbq('track','PageView');
   </script>
@@ -734,7 +737,13 @@
             </select>
           </div>
           <div class="col-12">
-            <button type="submit" class="wa-btn w-100 glitch-effect">📲 Send to WhatsApp</button>
+            <button type="submit" class="wa-btn w-100 glitch-effect" id="submitBtn">
+              <span class="btn-text">📲 Send to WhatsApp</span>
+              <span class="btn-loader d-none">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Sending...
+              </span>
+            </button>
           </div>
         </div>
       </form>
@@ -774,10 +783,13 @@ const closeFormBtn=document.getElementById('closeFormBtn');
 const ppOverlay=document.getElementById('ppOverlay');
 const ppClose=document.getElementById('ppClose');
 const privacyBtn=document.getElementById('privacyBtn');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = submitBtn.querySelector('.btn-text');
+const btnLoader = submitBtn.querySelector('.btn-loader');
 
-// ✅ UPDATED GOOGLE SCRIPT URL
+// ✅ SAME GOOGLE SCRIPT URL
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyNsyx76sLGBy09qj-B-7bZz6pnK2GdnHr63PpvwBvTKPcbEFvFfxvpmuJg74plR6ZA/exec";
-// Tabassum's WhatsApp Number - 9257947752
+// ✅ SAME WHATSAPP NUMBER (cleaned - removed space)
 const WA_NUMBER_INT="919257947752";
 
 function openForm(source='site'){
@@ -818,8 +830,10 @@ document.addEventListener('click',e=>{
   }
 });
 
-mainForm.addEventListener('submit',e=>{
+// ✅ FIXED: Form submission with proper data format and single Contact event
+mainForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
+  
   const name=document.getElementById('inp_name').value.trim();
   const phone=document.getElementById('inp_phone').value.replace(/\D/g,'');
   const age=document.getElementById('inp_age').value;
@@ -831,37 +845,58 @@ mainForm.addEventListener('submit',e=>{
     return;
   }
 
-  const formData=new FormData();
-  formData.append('name',name);
-  formData.append('phone',phone);
-  formData.append('age',age);
-  formData.append('gender',gender);
-  formData.append('profession',profession);
-  formData.append('source',sourceInfo.value||'Website');
-  formData.append('timestamp',new Date().toISOString());
+  // Show loading state
+  btnText.classList.add('d-none');
+  btnLoader.classList.remove('d-none');
+  submitBtn.disabled = true;
 
-  fetch(SCRIPT_URL,{
-    method:'POST',
-    body:formData,
-    mode:'no-cors'
-  }).catch(err=>console.error('Sheet error:',err));
+  // ✅ FIXED: Use URLSearchParams for proper Google Sheets integration
+  const formData = new URLSearchParams();
+  formData.append('Timestamp', new Date().toLocaleString());
+  formData.append('Name', name);
+  formData.append('Phone', phone);
+  formData.append('Age', age);
+  formData.append('Gender', gender);
+  formData.append('Profession', profession);
+  formData.append('Source', sourceInfo.value || 'Website');
 
+  try {
+    // Send to Google Sheets
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData.toString()
+    });
+  } catch (err) {
+    console.error('Sheet error:', err);
+  }
+
+  // ✅ FIXED: Only Contact event (removed duplicate Lead event)
+  if(typeof fbq!=='undefined'){
+    fbq('track', 'Contact', {
+      content_name: 'WhatsApp Lead Form',
+      content_category: 'Lead Generation',
+      content_source: sourceInfo.value || 'Website',
+      value: 0.00,
+      currency: 'INR'
+    });
+  }
+
+  // ✅ FIXED: Clean WhatsApp URL (no space)
   const message=encodeURIComponent(
     `Hello Ma'am,\n\nI am interested in your program. Here are my details:\n\nName: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nProfession: ${profession}\n\nPlease share next steps. Thank you!`
   );
 
-  if(typeof fbq!=='undefined'){
-    fbq('track','Contact');
-    fbq('track','Lead',{
-      content_name:'WhatsApp Form Submission',
-      content_category:'Lead Generation',
-      content_source:sourceInfo.value
-    });
-  }
-
-  // ✅ FIXED: Removed space in wa.me URL - now leads go directly to 9257947752
   window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`,'_blank');
   closeForm();
+  
+  // Reset button
+  btnText.classList.remove('d-none');
+  btnLoader.classList.add('d-none');
+  submitBtn.disabled = false;
 });
 
 document.addEventListener('keydown',e=>{
