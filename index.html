@@ -777,8 +777,8 @@ const privacyBtn=document.getElementById('privacyBtn');
 
 // ✅ UPDATED GOOGLE SCRIPT URL
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyNsyx76sLGBy09qj-B-7bZz6pnK2GdnHr63PpvwBvTKPcbEFvFfxvpmuJg74plR6ZA/exec";
-// Tabassum's WhatsApp Number
-const WA_NUMBER_INT="919257947752‬";
+// Tabassum's WhatsApp Number - 9257947752
+const WA_NUMBER_INT="919257947752";
 
 function openForm(source='site'){
   sourceInfo.value=source;
@@ -859,6 +859,7 @@ mainForm.addEventListener('submit',e=>{
     });
   }
 
+  // ✅ FIXED: Removed space in wa.me URL - now leads go directly to 9257947752
   window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`,'_blank');
   closeForm();
 });
